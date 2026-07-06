@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-label="CSFloat">
+  <rect width="96" height="96" rx="20" fill="#1b2537"/>
+  <path d="M26 27c-8 0-14 7-14 21s6 21 14 21h15V58H28c-3 0-5-3-5-10s2-10 5-10h13V27H26z" fill="#55d3c4"/>
+  <path d="M48 27v42h12V53h20V42H60v-4h24V27H48z" fill="#f2f5f8"/>
+</svg>

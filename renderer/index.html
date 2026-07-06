@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' https: data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'"
+    />
+    <title>CS2 Market Lens</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="left logoWrap">
+        <img class="topLogo" src="../iconcs2.png" alt="CS2 Inventory Logo" />
+
+        <!-- Marketplace selector button + dropdown -->
+        <div class="marketplaceWrap">
+          <button class="marketplaceBtn" id="marketplaceBtn" title="Marketplace settings">
+            <span class="marketplaceBtnArrow" id="marketplaceBtnArrow">▼</span>
+            <img class="marketplaceBtnIcon" src="../markets.png" alt="Marketplaces" />
+            <span class="marketplaceErrorBadge hidden" id="marketplaceErrorBadge">!</span>
+          </button>
+
+          <div class="marketplaceDropdown hidden" id="marketplaceDropdown">
+            <div class="marketplaceDisclaimer">⚠ Post-fee prices are estimates</div>
+            <div class="marketplaceList" id="marketplaceList"></div>
+            <div class="marketplaceMinError hidden" id="marketplaceMinError">
+              Must have at least 1 market selected
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <!-- Post-fee price toggle -->
+        <label class="feeToggle" title="When on, shows estimated seller receive amount after marketplace fees">
+          <span class="feeToggleLabel">Use Post-Fee Price</span>
+          <div class="feeToggleSwitch">
+            <input type="checkbox" id="postFeeToggle" />
+            <span class="feeToggleSlider"></span>
+          </div>
+        </label>
+
+        <button class="miniModeBtn" id="miniModeBtn" title="Show mini tracker">Mini Mode</button>
+        <button class="settingsBtn" id="settingsBtn" title="Settings">⚙</button>
+
+        <input
+          id="steamid"
+          class="input"
+          placeholder="Enter SteamID or SteamID64"
+        />
+        <button id="pull" class="btn">Pull Inventory</button>
+      </div>
+    </header>
+
+    <div class="inventorySummarySticky">
+      <div id="marketRefreshBar" class="marketRefreshBar hidden"></div>
+      <div id="status" class="status"></div>
+    </div>
+
+    <div id="emptyState" class="emptyState">
+      <img class="emptyLogo" src="../iconcs2.png" alt="CS2 Inventory Logo" />
+    </div>
+
+    <main id="grid" class="grid"></main>
+
+    <!-- Price breakdown modal -->
+    <div class="modalOverlay hidden" id="modalOverlay">
+      <div class="modal">
+        <div class="modalHeader">
+          <span class="modalTitle" id="modalTitle">Price Breakdown</span>
+          <button class="modalClose" id="modalClose">✕</button>
+        </div>
+        <div class="modalBody" id="modalBody"></div>
+      </div>
+    </div>
+
+    <script src="../marketConfig.js"></script>
+    <script src="./renderer.js"></script>
+  </body>
+</html>

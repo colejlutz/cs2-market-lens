@@ -1,0 +1,22 @@
+{
+  "name": "cs2-market-lens",
+  "productName": "CS2 Market Lens",
+  "version": "0.1.0",
+  "description": "Local-first CS2 inventory pricing and marketplace tracker.",
+  "private": true,
+  "keywords": [
+    "cs2",
+    "electron",
+    "inventory-tracker",
+    "price-tracker",
+    "steam"
+  ],
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "electron": "^39.2.7"
+  }
+}

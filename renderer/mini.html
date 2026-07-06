@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-src 'none'"
+    />
+    <title>CS2 Market Lens Mini Tracker</title>
+    <link rel="stylesheet" href="./mini.css" />
+  </head>
+  <body>
+    <section class="widget">
+      <header class="miniTopbar">
+        <div class="miniTitle">
+          <img src="../iconcs2.png" alt="" />
+          <span>CS2 Market Lens</span>
+        </div>
+        <span class="trackingState" id="trackingState">READY</span>
+      </header>
+
+      <div class="metricGrid">
+        <div class="metric">
+          <span class="metricLabel">Tracked Items</span>
+          <strong id="trackedItems">--</strong>
+        </div>
+        <div class="metric">
+          <span class="metricLabel">Portfolio Value</span>
+          <strong class="value" id="portfolioValue">--</strong>
+        </div>
+      </div>
+
+      <div class="compactRows">
+        <div class="compactRow"><span>Alert</span><b id="latestAlert">No alerts configured</b></div>
+        <div class="compactRow"><span>Top Mover</span><b id="topMover">No movement yet</b></div>
+        <div class="compactRow"><span>Updated</span><b id="lastUpdated">Not loaded</b></div>
+        <div class="compactRow"><span>Providers</span><b id="providerStatus">Steam</b></div>
+      </div>
+
+      <footer class="miniActions">
+        <button class="primary" id="openDashboard">Open Dashboard</button>
+        <button id="pauseTracking">Pause</button>
+        <button id="hideMini">Hide</button>
+      </footer>
+    </section>
+    <script src="./mini.js"></script>
+  </body>
+</html>
